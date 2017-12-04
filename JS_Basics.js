@@ -116,46 +116,42 @@ studentNames()
 // Instructors
 // 1 - MICHAEL CHOI - 11
 // 2 - MARTIN PURYEAR - 13
-let users = {
-    'Students': [{
-            fName: 'Michael',
-            lName: 'Jordan'
-        },
-        {
-            fName: 'John',
-            lName: 'Rosales'
-        },
-        {
-            fName: 'Mark',
-            lName: 'Guillen'
-        },
-        {
-            fName: 'KB',
-            lName: 'Tonel'
-        }
-    ],
-    'Instructors': [{
-            fName: 'Michael',
-            lName: 'Choi'
-        },
-        {
-            fName: 'Martin',
-            lName: 'Puryear'
-        }
-    ]
-}
-
-
-
-const studentNames = () => {
-
-    for (let title in users) {
-        console.log(title)
-        for (let i = 0; i < users[title].length; i++) {
-            let fullname = users[title][i].fName + users[title].lName
-            console.log(`${i} - ${users[title][i].fName} ${users[title][i].lName} - ${fullname.length}`)
-        }
+const studentsInstructors = () => {
+    let users = {
+        'Students': [{
+                first_name: 'Michael',
+                last_name: 'Jordan'
+            },
+            {
+                first_name: 'John',
+                last_name: 'Rosales'
+            },
+            {
+                first_name: 'Mark',
+                last_name: 'Guillen'
+            },
+            {
+                first_name: 'KB',
+                last_name: 'Tonel'
+            }
+        ],
+        'Instructors': [{
+                first_name: 'Michael',
+                last_name: 'Choi'
+            },
+            {
+                first_name: 'Martin',
+                last_name: 'Puryear'
+            }
+        ]
     }
 
-};
-studentNames()
+    for (let person in users) {
+        console.log(person);
+        for (let i = 0; i < users[person].length; i++) {
+            let fullName = (`${users[person][i].first_name} ${users[person][i].last_name}`)
+            console.log(`${i + 1} - ${fullName} - ${fullName.length}`);
+        }
+    }
+}
+studentsInstructors();
