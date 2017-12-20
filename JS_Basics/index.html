@@ -49,6 +49,24 @@
         displayVal = `Today is ${days[d.getDay()]}`;
         message();
         currentTime();
+
+        const currentDate = () => {
+            let today = new Date();
+            let day = today.getDate();
+            let month = today.getMonth() + 1;
+            let year = today.getFullYear();
+            displayVal = `Current Date: ${month}/${day}/${year}`;
+            message();
+        }
+        currentDate();
+
+        const triArea = (side1, side2, side3) => {
+            let perimeter = (side1 + side2 + side3) / 2;
+            let area = Math.sqrt(perimeter * ((perimeter - side1) * (perimeter - side2) * (perimeter - side3)));
+            displayVal = `Area of triangle: ${area}`;
+            message();
+        }
+        triArea(5, 6, 7);
     </script>
 </body>
 
